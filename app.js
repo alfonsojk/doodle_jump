@@ -15,6 +15,9 @@
       let isGoingRight = false
       let leftTimerId
       let rightTimerId
+      let restart
+
+
 
       class Platform {
           constructor(newPlatBottom) {
@@ -70,7 +73,7 @@
       }
 
       function fall() {
-          isJumping = false //create a jump function that actually is false the we fall
+          isJumping = false //create a jump function that actually is false that we fall
           clearInterval(upTimerId)
           downTimerId = setInterval(function () {
               doodlerBottomSpace -= 5
@@ -151,6 +154,11 @@
           clearInterval(leftTimerId)
           clearInterval(rightTimerId)
       }
+      
+      document.addEventListener('keyup', function(e){
+        if(e.keyCode == 13) // enter key
+          window.location.reload(); //reload
+      })
 
       //assign functions to keyCodes
       function control(e) {
@@ -161,7 +169,8 @@
               moveRight() //move right
           } else if (e.key === 'ArrowUp') {
               moveStraight() //move Straight
-          }
+          } else if (e.key === 'SpaceBar')
+              restart()
       }
 
       function gameOver() {

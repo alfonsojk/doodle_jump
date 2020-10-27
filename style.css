@@ -24,3 +24,25 @@
     position:absolute;
     background-image: url(assets/platform.png);
 }
+
+.hola{
+    width: 110px;
+    height: 105px;
+    display: inline-block;
+    justify-content: flex-end;
+    background-image: url(assets/arrows.gif);
+}
+
+.enter {
+    width: 110px;
+    height: 107px;
+    display: inline-block;
+    justify-content: flex-end;
+    background-image: url(assets/enter.gif);
+}
+
+.container {
+    width: auto;
+    display: inline-flex;
+    align-items: flex-end;
+}
